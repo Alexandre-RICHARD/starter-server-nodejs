@@ -1,0 +1,29 @@
+{
+    "name": "project-to-define",
+    "version": "1.0.0",
+    "description": "PROJET A DEFINIR",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon",
+        "build": "rd /s /q .build & mkdir .build .build\\app & xcopy /y .\\index.js .\\.build & xcopy /y .\\package.json .\\.build & xcopy /y /s /q .\\app .\\.build\\app",
+        "lint": "eslint ./*.js",
+        "lint:fix": "eslint --fix ./*.js",
+        "clean": "rd /s /q .build",
+        "clean:all": "rd /s /q node_modules .build & rd /s /q .build & del /q package-lock.json & del /q pnpm-lock.yaml"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^8.46.0"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2"
+    }
+}
