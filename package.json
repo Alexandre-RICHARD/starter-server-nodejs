@@ -1,15 +1,17 @@
 {
-    "name": "project-to-define",
-    "version": "1.0.0",
-    "description": "PROJET A DEFINIR",
-    "main": "index.js",
+	"version": "1.0.0",
+	"name": "starter-vite-nodejs-typescript-express",
     "scripts": {
         "start": "nodemon",
-        "build": "rd /s /q .build & mkdir .build .build\\app & xcopy /y .\\index.js .\\.build & xcopy /y .\\package.json .\\.build & xcopy /y /s /q .\\app .\\.build\\app",
-        "lint": "eslint ./*.js",
-        "lint:fix": "eslint --fix ./*.js",
-        "clean": "rd /s /q .build",
-        "clean:all": "rd /s /q node_modules .build & rd /s /q .build & del /q package-lock.json & del /q pnpm-lock.yaml"
+        "test": "vitest",
+        "update": "pnpm update || yarn upgrade || npm update",
+        "build": "rd /s /q .build & mkdir .build .build\\src & xcopy /y .\\index.js .\\.build & xcopy /y .\\package.json .\\.build & xcopy /y /s /q .\\src .\\.build\\src",
+        "build-vite": "tsc && vite build",
+        "prettier": "prettier --write src/**/*",
+		"lint": "eslint src/**/*.ts  --report-unused-disable-directives && echo '\u001b[32mESLint n'a trouvé aucune erreur\u001b[0m'",
+		"lint & fix": "eslint src/**/*.ts --fix  --report-unused-disable-directives && echo '\u001b[32mESLint n'a trouvé aucune erreur\u001b[0m'",
+		"clean": "rd /s /q build",
+		"clean:all": "rd /s /q node_modules build & rd /s /q build"
     },
     "repository": {
         "type": "git",
@@ -19,11 +21,19 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "eslint": "^8.46.0"
-    },
-    "dependencies": {
+        "@stylistic/eslint-plugin": "^1.4.1",
+        "@types/node": "^20.10.0",
+        "@typescript-eslint/eslint-plugin": "^6.13.1",
+        "@typescript-eslint/parser": "^6.13.1",
         "cors": "^2.8.5",
         "dotenv": "^16.3.1",
-        "express": "^4.18.2"
+        "eslint": "^8.54.0",
+        "eslint-config-prettier": "^9.0.0",
+        "express": "^4.18.2",
+        "prettier": "^3.1.0",
+        "typescript": "^5.3.2",
+        "vite": "^5.0.3",
+        "vite-plugin-node": "^3.1.0",
+        "vitest": "^0.34.6"
     }
 }
