@@ -12,8 +12,6 @@
         "build-run": "node build/index.js",
         "clean": "rd /s /q build",
         "clean:all": "rd /s /q node_modules build & rd /s /q build"
-
-
     },
     "repository": {
         "type": "git",
