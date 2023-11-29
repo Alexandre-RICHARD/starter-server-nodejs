@@ -1,14 +1,14 @@
+import {Request, Response} from "express";
+
 const mainController = {
-  
-  test: async (req, res) => {
-    try {
-      res.json("Le serveur fonctionne");
-    } catch (error) {
-      console.trace(error);
-      res.status(200).json(error);
-    }
-  },
-  
+    "test": (_req: Request, res: Response): void => {
+        try {
+            res.json("Le serveur fonctionne");
+        } catch (error) {
+            console.trace(error);
+            res.status(200).json(error);
+        }
+    },
 };
-  
-module.exports = mainController;
+
+export default mainController;

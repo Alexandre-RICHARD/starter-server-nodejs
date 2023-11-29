@@ -1,15 +1,16 @@
-// On importe dotenv pour utiliser les variables d'environnement
-require("dotenv").config();
 // On importe express, notre créateur de serveur
-const express = require("express");
+import express, {Express} from "express";
+// Utilisation de CORS pour l'origine des requêtes
+import cors from "cors";
+// On importe notre router
+import router from "./router";
+// On importe dotenv pour utiliser les variables d'environnement
+import dotenv from "dotenv";
+dotenv.config();
 // On importe notre port depuis le .env
 const PORT = process.env.LOCAL_PORT;
-// On importe notre router
-const router = require("./router");
-// Utilisation de CORS pour l'origine des requêtes
-const cors = require("cors");
 // On créé app avec express
-const app = express();
+const app: Express = express();
 
 // Application de CORS
 app.use(cors());
@@ -19,11 +20,8 @@ app.use(express.json());
 app.use(router);
 
 // On démarre notre app
-const start = () =>
-    app.listen(PORT || 3000, () => {
-        console.log("Serveur fonctionnel");
-    });
+const start = () => app.listen(PORT, (): void => {
+    console.log(`Server works on http://localhost:${PORT}`);
+});
 
-module.exports = {
-    start,
-};
+export default start;
