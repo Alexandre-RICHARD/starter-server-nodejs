@@ -1,27 +1,21 @@
-// On importe express, notre créateur de serveur
+// Import of express and its type
 import express, {Express} from "express";
-// Utilisation de CORS pour l'origine des requêtes
+// Using of cors for request origin handling
 import cors from "cors";
-// On importe notre router
 import router from "./router";
-// On importe dotenv pour utiliser les variables d'environnement
+// Import and config of dotenv to use environment variable
 import dotenv from "dotenv";
 dotenv.config();
-// On importe notre port depuis le .env
 const PORT = process.env.LOCAL_PORT;
-// On créé app avec express
-const app: Express = express();
 
-// Application de CORS
+// Create app server with express
+const app: Express = express();
 app.use(cors());
-// Utilisation de la Jsonification pour les réponse de requêtes
+// Using json for request response
 app.use(express.json());
-// Notre app utilisé le router
 app.use(router);
 
-// On démarre notre app
-const start = () => app.listen(PORT, (): void => {
+// Export of starting function
+export const start = () => app.listen(PORT, (): void => {
     console.log(`Server works on http://localhost:${PORT}`);
 });
-
-export default start;
