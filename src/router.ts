@@ -3,10 +3,10 @@ import {Router as createRouter} from "express";
 import mainController from "./controllers/mainController";
 const router = createRouter();
 
+// Here will be all our routes
 router.get("/test", mainController.test);
 
-// Si aucune la requête n'est pas géré par le serveur,
-// le router renvoit une 404 avec un message
+// Handling all other route unassigned to a controller method
 router.use((_req: Request, res: Response): void => {
     res.status(404).json(
         "404 - Pas de route gérée par le serveur sur cette adresse"

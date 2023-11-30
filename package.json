@@ -13,10 +13,6 @@
         "clean": "rd /s /q build",
         "clean:all": "rd /s /q node_modules build & rd /s /q build"
     },
-    "repository": {
-        "type": "git",
-        "url": "git"
-    },
     "devDependencies": {
         "@stylistic/eslint-plugin": "^1.4.1",
         "@types/cors": "^2.8.17",
