@@ -1,9 +1,12 @@
 import {Request, Response} from "express";
 
+import {worktimeModel} from "./../models/main";
+
 const mainController = {
-    "test": (_req: Request, res: Response): void => {
+    "getData": async (_req: Request, res: Response) => {
         try {
-            res.json("Le serveur fonctionne");
+            const response = await worktimeModel.getAllWorkTimeData();
+            res.json(response);
         } catch (error) {
             console.trace(error);
             res.status(200).json(error);
