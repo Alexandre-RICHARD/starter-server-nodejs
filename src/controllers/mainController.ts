@@ -17,6 +17,24 @@ const mainController = {
             );
         }
     },
+    "getActivity": (_req: Request, res: Response) => {
+        const weirdActivity = [
+            "Bronzer avec des pingouins",
+            "Tenir la main à un manchot",
+            "Aller à la plage au Sahara",
+            "Danser avec aucune star",
+            "Dormir à l'hôtel avec Jack",
+            "Comprendre Tenet",
+            "Essayer de voler le nez de Tom Jedusor",
+            "Vouloir rendre tout le monde meilleur"
+        ];
+        const getRandomWeirdActivity = () => {
+            const index = Math.floor(Math.random() * weirdActivity.length);
+            return weirdActivity[index];
+        };
+
+        res.status(200).json({"activity": getRandomWeirdActivity()});
+    },
 };
 
 export default mainController;

@@ -6,6 +6,7 @@ const router = createRouter();
 
 // Here will be all our routes
 router.get("/getdata", mainController.getData);
+router.get("/getactivity", mainController.getActivity);
 
 // Handling all other route unassigned to a controller method
 router.use((_req: Request, res: Response): void => {
