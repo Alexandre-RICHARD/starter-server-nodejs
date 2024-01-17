@@ -16,12 +16,14 @@ A project starter designed to streamline the setup process for new projects. For
 - TypeScript, to uncover errors more quickly
 - Express, to easy create node server
 - ESLint, Prettier, to keep a beautiful code
-- Sass, to write your style more logically
 - Vitest, to test our functions and logics
+- Cors, to congigure correctly request source
+- MariaDB, Database manager correctly configurated
 
 ## Other details :
 
 - Practical npm scripts to automate some tasks
+- Nodemon configuration adapted to this project
 
 ## Dependencies
 
@@ -34,6 +36,7 @@ List of major dependencies used in the project:
 - `dotenv`
 - `eslint`
 - `express`
+- `mariadb`
 - `nodemon`
 - `prettier`
 - `ts-node`
@@ -47,7 +50,7 @@ List of major dependencies used in the project:
 - `update`: Update project dependencies.
 - `prettier`: Format source code using Prettier.
 - `lint`: Run ESLint on TypeScript files and report error.
-- `lint & fix`: Run ESLint on TypeScript files, fix fisable issues.
+- `lint & fix`: Run ESLint on TypeScript files, fix fixable issues.
 - `build`: Build the project using TypeScript and Vercel/ncc.
 - `build-run`: Preview the built project using Vercel/ncc.
 - `clean`: Remove the `build` directory.
@@ -57,14 +60,17 @@ List of major dependencies used in the project:
 
 ```
 starter-vite-nodejs-typescript-express
-├─ src
-│  ├─ controllers
-│  ├─ tests
-│  │  └─ utilities
-│  ├─ utilities
+├─ src/
+│  ├─ controllers/
+│  ├─ models/
+│  ├─ tests/
+│  ├─ types/
+│  ├─ utilities/
+│  ├─ database.ts
 │  ├─ router.ts
-│  ├─ server.ts
-├─ .env.exemple
+│  └─ server.ts
+│
+├─ .env
 ├─ .eslintrc.json
 ├─ .gitignore
 ├─ .prettierrc
@@ -73,5 +79,6 @@ starter-vite-nodejs-typescript-express
 ├─ package.json
 ├─ pnpm-lock.yaml
 ├─ readme.md
+├─ testRequest.http
 └─ tsconfig.json
 ```
